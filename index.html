@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随机图片 HTTP 服务</title>
+    <style>
+        body { font-family: "Microsoft YaHei", Arial, sans-serif; background: #f5f5f5; color: #333; margin: 0; }
+        .main { max-width: 680px; margin: 72px auto; padding: 32px; background: #fff; border: 1px solid #ddd; }
+        h1 { font-size: 26px; margin: 0 0 16px; }
+        p { font-size: 15px; line-height: 1.9; }
+        .buttons { margin: 26px 0; display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { background: #337ab7; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 4px; font-size: 14px; }
+        .btn:hover { background: #286090; }
+        .note { border-top: 1px solid #e5e5e5; padding-top: 14px; color: #666; font-size: 14px; }
+        code { background: #f2f2f2; padding: 2px 5px; }
+        @media (max-width: 740px) { .main { margin: 20px 12px; padding: 22px; } }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <h1>随机图片 HTTP 服务</h1>
+        <p>本项目使用 Python FastAPI 开发。服务器从 <code>images</code> 文件夹中随机选取一张图片，并通过 HTTP 接口返回给客户端。</p>
+        <div class="buttons">
+            <a class="btn" href="/photo" target="_blank" rel="noopener">随机获取图片</a>
+            <a class="btn" href="/health" target="_blank" rel="noopener">查看服务状态</a>
+            <a class="btn" href="/docs" target="_blank" rel="noopener">查看接口文档</a>
+        </div>
+        <p class="note">接口说明：<code>GET /photo</code> 返回随机图片；<code>GET /health</code> 查看图片数量。若图片目录不存在或没有可用图片，<code>/photo</code> 返回 HTTP 503 错误信息。</p>
+    </main>
+</body>
+</html>
